@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PÅLIT – Rätt hjälp. Pålitligt.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7f6;
+      color: #173b2f;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #e0e5e2;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      margin-top: 6px;
+      color: #60756c;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #60756c;
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: grid;
+      gap: 14px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid #dfe7e2;
+      border-radius: 16px;
+      padding: 20px;
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .service:hover {
+      background: #eef5f1;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .back {
+      margin-bottom: 20px;
+      cursor: pointer;
+      color: #287a5a;
+      font-weight: bold;
+    }
+
+    .price {
+      color: #287a5a;
+      font-size: 15px;
+      margin-top: 6px;
+    }
+
+    form {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccd8d1;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #287a5a;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .notice {
+      background: #eef5f1;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #45665a;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">PÅLIT</div>
+  <div class="tagline">Rätt hjälp. Pålitligt.</div>
+</header>
+
+<main>
+
+  <section id="home">
+    <h1>Vad behöver du hjälp med?</h1>
+    <p class="intro">
+      Vi hjälper dig att hitta rätt hjälp i Östergötland.
+    </p>
+
+    <div class="services">
+      <div class="service" onclick="show('building')">
+        🏠 Bygg & Renovering
+      </div>
+
+      <div class="service">
+        🛠️ Hem & småjobb
+      </div>
+
+      <div class="service">
+        🚚 Flytt & Transport
+      </div>
+
+      <div class="service">
+        🧹 Städning
+      </div>
+
+      <div class="service">
+        🌿 Trädgård
+      </div>
+
+      <div class="service">
+        📦 Övrigt
+      </div>
+    </div>
+  </section>
+
+
+  <section id="building" class="hidden">
+    <div class="back" onclick="show('home')">
+      ← Tillbaka
+    </div>
+
+    <h1>Bygg & Renovering</h1>
+
+    <div class="services">
+
+      <div class="service" onclick="show('painting')">
+        🎨 Målning
+      </div>
+
+      <div class="service">
+        🧱 Spackling
+      </div>
+
+      <div class="service">
+        🪵 Golvläggning
+      </div>
+
+      <div class="service">
+        🚪 Dörrar & lister
+      </div>
+
+      <div class="service">
+        🔨 Rivning
+      </div>
+
+      <div class="service">
+        🔧 Montering
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="painting" class="hidden">
+    <div class="back" onclick="show('building')">
+      ← Tillbaka
+    </div>
+
+    <h1>Målning</h1>
+
+    <div class="services">
+
+      <div class="service" onclick="show('request')">
+        Timpris
+        <div class="price">Från 499 kr/timme</div>
+      </div>
+
+      <div class="service" onclick="show('request')">
+        Fast pris
+        <div class="price">Vi räknar ut priset efter dina uppgifter</div>
+      </div>
+
+      <div class="service" onclick="show('request')">
+        Begär offert
+        <div class="price">Skicka bilder och beskriv jobbet</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="request" class="hidden">
+    <div class="back" onclick="show('painting')">
+      ← Tillbaka
+    </div>
+
+    <h1>Beskriv ditt jobb</h1>
+
+    <form onsubmit="sendRequest(event)">
+
+      <label>Vad behöver göras?</label>
+      <textarea placeholder="Beskriv jobbet så tydligt du kan..." required></textarea>
+
+      <label>Adress</label>
+      <input type="text" placeholder="Din adress" required>
+
+      <label>Önskat datum</label>
+      <input type="date" required>
+
+      <label>Övrig information</label>
+      <textarea placeholder="Till exempel storlek på rummet eller andra detaljer"></textarea>
+
+      <button type="submit">
+        Skicka förfrågan
+      </button>
+
+      <div class="notice">
+        Din bokning bekräftas inte direkt. PÅLIT kontrollerar först
+        tillgänglighet och återkommer till dig.
+      </div>
+
+    </form>
+  </section>
+
+
+  <section id="success" class="hidden">
+    <h1>✅ Förfrågan skickad!</h1>
+
+    <p class="intro">
+      Tack! PÅLIT kommer att kontrollera tillgänglighet
+      och återkomma med nästa steg.
+    </p>
+
+    <button onclick="show('home')">
+      Tillbaka till startsidan
+    </button>
+  </section>
+
+</main>
+
+
+<script>
+  function show(section) {
+    document.querySelectorAll("main section").forEach(function(el) {
+      el.classList.add("hidden");
+    });
+
+    document.getElementById(section).classList.remove("hidden");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  function sendRequest(event) {
+    event.preventDefault();
+    show("success");
+  }
+</script>
+
+</body>
+</html>
